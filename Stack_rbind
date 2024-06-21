@@ -1,0 +1,24 @@
+#Author: Lianna J Sliwczynski
+
+### Stack the columns of the tables with the same "HEADERS" ###
+
+rbind(data_chop1,data_chop2,data_chop3)
+stacked.data_chop123 <- rbind(data_chop1,data_chop2,data_chop3) 
+
+write.csv(stacked.data17032017_123,"stacked.data17032017_123.csv",row.names=FALSE) 
+
+
+#Already setwd as E: drive. AND variable name,file location
+
+### Show data as a dot plot of doc vs fv/fm. (Need to do means and standard error bars, then jitter dodge to view each data side by side) ###
+
+library(ggplot2)
+ggplot(data=data_chop1, aes(x = "doc",          # I need to change to day, once I take out the "0.00" for fv/fm and add in a column of "3" etc for days.
+                              y = 'fv/fm',
+                              group=doc)) +
+        
+        geom_point(size=1.7)
+ 
+
+################
+
